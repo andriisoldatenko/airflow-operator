@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: airflow-operator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: airflow-operator
+  template:
+    metadata:
+      labels:
+        name: airflow-operator
+    spec:
+      serviceAccountName: airflow-operator
+      containers:
+        - name: airflow-operator
+          image: astronomer/airflow-operator:v0.0.1
+          ports:
+          - containerPort: 8080
+            name: metrics
+          imagePullPolicy: Always
+          env:
+            - name: WATCH_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: OPERATOR_NAME
+              value: "airflow-operator"

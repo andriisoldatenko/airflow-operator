@@ -24,15 +24,6 @@ git clone https://github.com/astronomer/airflow-operator.git
 wget -qO- https://helm.astronomer.io/airflow-0.7.5.tgz | tar vxz -C ./helm-charts
 ```
 
-## Build and run the operator
-
-```
-kubectl create -f deploy/crds/airflow_v1alpha1_crd.yaml
-```
-
-## Run as a pod inside a Kubernetes cluster
-
-
 ### Build and push airflow-operator docker image (optional):
 
 ```
@@ -41,12 +32,26 @@ docker push astronomerio/airflow-operator:v0.0.1
 sed -i "" 's|REPLACE_IMAGE|astronomerio/airflow-operator:v0.0.1|g' deploy/operator.yaml
 ```
 
+If you can see error like this:
+
+```
+zsh: command not found: operator-sdk
+```
+Please make sure you installed the [Operator SDK](https://github.com/operator-framework/operator-sdk/blob/master/doc/helm/user-guide.md#install-the-operator-sdk-cli) properly
+
+## Build and run the operator
+
+```
+kubectl create -f deploy/crds/airflow_v1alpha1_crd.yaml
+```
+
+## Run as a pod inside a Kubernetes cluster
 
 ## Deploy the airflow-operator
 
 ```
-kubectl create -f deploy/service_account.yaml --namespace andrii-dev
-kubectl create -f deploy/role.yaml --namespace andrii-dev
+kubectl create -f deploy/service_account.yaml
+kubectl create -f deploy/role.yaml
 kubectl create -f deploy/role_binding.yaml
 kubectl create -f deploy/operator.yaml
 ```

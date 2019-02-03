@@ -15,7 +15,7 @@ spec:
       serviceAccountName: airflow-operator
       containers:
         - name: airflow-operator
-          image: astronomer/airflow-operator:v0.0.1
+          image: astronomerio/airflow-operator:v0.0.1
           ports:
           - containerPort: 8080
             name: metrics

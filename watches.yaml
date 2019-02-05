@@ -1,5 +1,5 @@
 ---
 - version: v1alpha1
-  group: example.com
+  group: astronomer.io
   kind: Airflow
   chart: /opt/helm/helm-charts/airflow

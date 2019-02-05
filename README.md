@@ -27,8 +27,8 @@ wget -qO- https://helm.astronomer.io/airflow-0.7.5.tgz | tar vxz -C ./helm-chart
 ### Build and push airflow-operator docker image (optional):
 
 ```
-operator-sdk build astronomerio/airflow-operator:v0.0.1
-docker push astronomerio/airflow-operator:v0.0.1
+operator-sdk build astronomerio/airflow-operator:v0.0.2
+docker push astronomerio/airflow-operator:v0.0.2
 sed -i "" 's|REPLACE_IMAGE|astronomerio/airflow-operator:v0.0.1|g' deploy/operator.yaml
 ```
 
@@ -43,6 +43,7 @@ Please make sure you installed the [Operator SDK](https://github.com/operator-fr
 
 ```
 kubectl create -f deploy/crds/airflow_v1alpha1_crd.yaml
+kubectl create -f deploy/crds/airflow_v1alpha1_cr.yaml
 ```
 
 ## Run as a pod inside a Kubernetes cluster
@@ -57,15 +58,18 @@ kubectl create -f deploy/operator.yaml
 ```
 
 
+```
+kubectl apply -f deploy/operator.yaml
+```
+
 ## Cleanup
 
 ```
-kubectl delete -f deploy/crds/example_v1alpha1_airflow_cr.yaml
+kubectl delete -f deploy/crds/airflow_v1alpha1_cr.yaml
 kubectl delete -f deploy/operator.yaml
 kubectl delete -f deploy/role_binding.yaml
 kubectl delete -f deploy/role.yaml
 kubectl delete -f deploy/service_account.yaml
-kubectl delete -f deploy/crds/example_v1alpha1_nginx_cr.yaml
 ```
 
 

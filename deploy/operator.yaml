@@ -15,19 +15,4 @@ spec:
       serviceAccountName: airflow-operator
       containers:
         - name: airflow-operator
-          image: astronomerio/airflow-operator:v0.0.1
-          ports:
-          - containerPort: 8080
-            name: metrics
-          imagePullPolicy: Always
-          env:
-            - name: WATCH_NAMESPACE
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.namespace
-            - name: POD_NAME
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.name
-            - name: OPERATOR_NAME
-              value: "airflow-operator"
+          image: astronomerio/airflow-operator:v0.0.2

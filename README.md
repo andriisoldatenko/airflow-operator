@@ -72,6 +72,11 @@ kubectl delete -f deploy/role.yaml
 kubectl delete -f deploy/service_account.yaml
 ```
 
+## How to deploy
+
+```
+kubectl apply -f deploy/crds/airflow_v1alpha1_cr.yaml
+```
 
 ## Useful links
 

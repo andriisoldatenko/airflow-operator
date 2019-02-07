@@ -82,3 +82,4 @@ kubectl apply -f deploy/crds/airflow_v1alpha1_cr.yaml
 - [Introducing the Operator Framework](https://coreos.com/blog/introducing-operator-framework)
 - [Operators overview](https://coreos.com/operators/)
 - [Operator SDK Samples - Helm](https://github.com/operator-framework/operator-sdk-samples/tree/master/helm)
+- [Helm Operator Proposal](https://github.com/operator-framework/operator-sdk/blob/master/doc/proposals/helm-operator.md)

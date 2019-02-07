@@ -2,7 +2,7 @@
 
 ### Overview
 
-The airflow operator manages apache airflow deployed to [Kubernetes] and automates tasks related to operating an airflow cluster.
+A [Kubernetes Operator](https://coreos.com/operators/) that manages Apache Airflow, and automates tasks related to operating an Airflow cluster.
 
 ## Requirements
 
@@ -10,7 +10,6 @@ The airflow operator manages apache airflow deployed to [Kubernetes] and automat
 - docker version 17.03+.
 - kubectl version v1.11.3+.
 - Access to a kubernetes v.1.11.3+ cluster.
-
 
 ## Clone airflow operator
 
@@ -56,7 +55,6 @@ kubectl create -f deploy/role.yaml
 kubectl create -f deploy/role_binding.yaml
 kubectl create -f deploy/operator.yaml
 ```
-
 
 ```
 kubectl apply -f deploy/operator.yaml

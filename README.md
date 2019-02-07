@@ -1,4 +1,4 @@
-# Airflow operator
+# Airflow Operator
 
 ### Overview
 
@@ -11,7 +11,7 @@ A [Kubernetes Operator](https://coreos.com/operators/) that manages Apache Airfl
 - kubectl version v1.11.3+.
 - Access to a kubernetes v.1.11.3+ cluster.
 
-## Clone airflow operator
+## Clone Airflow Operator
 
 ```bash
 git clone https://github.com/astronomer/airflow-operator.git

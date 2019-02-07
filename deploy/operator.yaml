@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: airflow-operator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: airflow-operator
+  template:
+    metadata:
+      labels:
+        name: airflow-operator
+    spec:
+      serviceAccountName: airflow-operator
+      containers:
+        - name: airflow-operator
+          image: astronomerio/airflow-operator:v0.0.2

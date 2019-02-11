@@ -1,4 +1,8 @@
 FROM quay.io/operator-framework/helm-operator:v0.4.0
 
-COPY helm-charts/ ${HOME}/helm-charts/
+ARG airflow_helm_version=0.7.5
+
+RUN mkdir -p  ${HOME}/helm-charts/ && \
+    wget -qO- http://helm.astronomer.io/airflow-${airflow_helm_version}.tgz | tar vxz -C ${HOME}/helm-charts/
+
 COPY watches.yaml ${HOME}/watches.yaml

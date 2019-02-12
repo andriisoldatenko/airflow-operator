@@ -1,4 +1,4 @@
-FROM quay.io/operator-framework/helm-operator:v0.4.0
+FROM quay.io/operator-framework/helm-operator:v0.5.0
 
 ARG airflow_helm_version=0.7.5
 

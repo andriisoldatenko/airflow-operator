@@ -28,7 +28,7 @@ wget -qO- https://helm.astronomer.io/airflow-0.7.5.tgz | tar vxz -C ./helm-chart
 ```
 operator-sdk build astronomerio/airflow-operator:v0.0.2
 docker push astronomerio/airflow-operator:v0.0.2
-sed -i "" 's|REPLACE_IMAGE|astronomerio/airflow-operator:v0.0.1|g' deploy/operator.yaml
+sed -i "" 's|REPLACE_IMAGE|astronomerio/airflow-operator:v0.0.2|g' deploy/operator.yaml
 ```
 
 If you can see error like this:

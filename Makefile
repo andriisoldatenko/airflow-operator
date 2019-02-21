@@ -14,7 +14,7 @@ ASTRONOMER_AIRFLOW_OPERATOR_VERSION ?= 0.0.1
 
 .PHONY: build-airflow-operator
 build-airflow-operator:
-	operator-sdk build astronomerio/airflow-operator:${ASTRONOMER_AIRFLOW_OPERATOR_VERSION}
+	operator-sdk build astronomerio/airflow-operator:0.0.1
 
 .PHONY: push-airflow-operator
 push-airflow-operator:

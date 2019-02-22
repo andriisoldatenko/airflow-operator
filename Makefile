@@ -10,11 +10,11 @@ BUILD_NUMBER ?= 1
 # HELM_REPOSITORY := helm.astronomer.io
 GITHUB_ORG := astronomer
 
-ASTRONOMER_AIRFLOW_OPERATOR_VERSION ?= 0.0.1
+ASTRONOMER_VERSION ?= 0.0.1
 
 .PHONY: build-airflow-operator
 build-airflow-operator:
-	operator-sdk build astronomerio/airflow-operator:0.0.1
+	operator-sdk build ${REPOSITORY}/ap-airflow-operator:${ASTRONOMER_VERSION}
 
 .PHONY: push-airflow-operator
 push-airflow-operator:

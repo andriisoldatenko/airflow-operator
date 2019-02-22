@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 for tag in ${PUSH_TAGS} ; do
     echo "Pushing ${PUSH_IMAGE}:${tag} ===================="

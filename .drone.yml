@@ -27,7 +27,9 @@ pipeline:
 
   notify:
     image: plugins/slack
-    secrets: [ slack_webhook ]
-    channel: airflow-operator
+    settings:
+      webhook:
+        from_secret: slack_webhook
+      channel: airflow-operator
     when:
-      status: [ success ]
+      status: [ failure ]

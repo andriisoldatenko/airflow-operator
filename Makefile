@@ -15,6 +15,7 @@ ASTRONOMER_VERSION ?= 0.0.1
 .PHONY: build-airflow-operator
 build-airflow-operator:
 	operator-sdk build ${REPOSITORY}/ap-airflow-operator:${ASTRONOMER_VERSION}
+	docker tag ${REPOSITORY}/ap-airflow-operator:${ASTRONOMER_VERSION} astronomerinc/ap-airflow-operator:latest
 
 .PHONY: push-airflow-operator
 push-airflow-operator:

@@ -30,4 +30,4 @@ pipeline:
     secrets: [ slack_webhook ]
     channel: airflow-operator
     when:
-      status: [ failure ]
+      status: [ success ]

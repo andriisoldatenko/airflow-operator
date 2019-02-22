@@ -18,6 +18,6 @@ build-airflow-operator:
 
 .PHONY: push-airflow-operator
 push-airflow-operator:
-	PUSH_IMAGE=${REPOSITORY}/ap-$${component} \
+	PUSH_IMAGE=${REPOSITORY}/ap-airflow-operator \
 	PUSH_TAGS="${ASTRONOMER_VERSION} latest" \
-	docker push ${PUSH_IMAGE} || exit 1
+	hack/push-image

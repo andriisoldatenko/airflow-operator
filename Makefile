@@ -7,7 +7,6 @@ REPOSITORY ?= astronomerinc
 # Bump this on subsequent build, reset on new version or public release. Inherit from env for CI builds
 BUILD_NUMBER ?= 1
 
-# HELM_REPOSITORY := helm.astronomer.io
 GITHUB_ORG := astronomer
 
 ASTRONOMER_VERSION ?= 0.0.1
@@ -21,4 +20,4 @@ build-airflow-operator:
 push-airflow-operator:
 	PUSH_IMAGE=${REPOSITORY}/ap-airflow-operator \
 	PUSH_TAGS="${ASTRONOMER_VERSION} latest" \
-	hack/push-image
+	bin/push-image
